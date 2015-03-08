@@ -11,7 +11,6 @@ public class Driver {
 
 	public static void main(String[] args) {
 		Flyway flyway = new FlywayHelper().getFlyway();
-		flyway.clean();
 		flyway.setTarget("1.2");
 		flyway.migrate();
 		DbUtil db = new DbUtil();
