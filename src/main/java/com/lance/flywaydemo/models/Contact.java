@@ -13,6 +13,8 @@ public class Contact {
 	private String name;
 	@Column("phone_number")
 	private String phoneNumber;
+	@Column("email")
+	private String email;
 
 	public Contact() {
 	}
@@ -20,10 +22,12 @@ public class Contact {
 	@TemplateConstructor
 	public Contact(@PropertyName("id") Integer id,
 			@PropertyName("name") String name,
-			@PropertyName("phoneNumber") String phoneNumber) {
+			@PropertyName("phoneNumber") String phoneNumber,
+			@PropertyName("email") String email) {
 		this.id = id;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
+		this.email = email;
 	}
 
 	public Integer getId() {
@@ -50,6 +54,15 @@ public class Contact {
 		this.phoneNumber = phoneNumber;
 	}
 	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -78,7 +91,6 @@ public class Contact {
 	@Override
 	public String toString() {
 		return "Contact [id=" + id + ", name=" + name + ", phoneNumber="
-				+ phoneNumber + "]";
+				+ phoneNumber + ", email=" + email + "]";
 	}
-
 }
