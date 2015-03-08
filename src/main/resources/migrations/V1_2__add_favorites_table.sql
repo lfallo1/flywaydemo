@@ -10,5 +10,5 @@ CREATE TABLE `favorite` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-INSERT INTO `favorite` (`contact`) select id from `contact` where name = 'lance');
-INSERT INTO `favorite` (`contact`) select id from `contact` where name = 'harry');
+INSERT INTO `favorite` (`contact`) select id from `contact` where name = 'lance';
+INSERT INTO `favorite` (`contact`) select id from `contact` where name = 'harry';
