@@ -1,5 +1,7 @@
 package com.lance.flywaydemo.app;
 
+import org.flywaydb.core.Flyway;
+
 import com.lance.flywaydemo.models.Contact;
 
 
@@ -7,10 +9,9 @@ import com.lance.flywaydemo.models.Contact;
 public class Driver {
 
 	public static void main(String[] args) {
-		FlywayHelper flywayHelper = new FlywayHelper();
-		//flywayHelper.migrateToVersion("1.0", true);
-		flywayHelper.getFlyway().setTarget("1.0");
-		flywayHelper.getFlyway().migrate();
+		Flyway flyway = new FlywayHelper().getFlyway();
+		flyway.setTarget("1.0");
+		flyway.migrate();
 		DbUtil db = new DbUtil();
 		for (Contact c : db.getContactDao().getAll()) {
 			System.out.println(c.toString());
