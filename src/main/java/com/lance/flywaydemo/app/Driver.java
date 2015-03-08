@@ -14,6 +14,6 @@ public class Driver {
 		for (Contact c : db.getContactDao().getAll()) {
 			System.out.println(c.toString());
 		}
-		flyway.info();
+		System.out.println(flywayHelper.getInfo());
 	}
 }

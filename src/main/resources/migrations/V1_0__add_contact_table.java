@@ -26,5 +26,4 @@ public class V1_0__add_contact_table implements JdbcMigration {
         	insertRecords.close();
         }
     }
-
 }

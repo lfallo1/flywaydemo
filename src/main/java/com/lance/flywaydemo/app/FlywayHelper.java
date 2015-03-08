@@ -22,6 +22,7 @@ public class FlywayHelper {
 		setLocations(bundle.getObject("locations").toString());
 		
 		flyway = new Flyway();
+		flyway.setCleanOnValidationError(true);
 		flyway.setDataSource(url, username, password);
 		flyway.setLocations(locations);			
 		flyway.setCallbacks(new FlywayCallbacks());
@@ -31,7 +32,6 @@ public class FlywayHelper {
 		if(clean){
 			flyway.clean();
 		}
-		flyway.setCleanOnValidationError(true);
 		flyway.setTarget(version);
 		flyway.migrate();
 		flyway.setTarget(flyway.info().all()[flyway.info().all().length-1].getVersion().getVersion());
