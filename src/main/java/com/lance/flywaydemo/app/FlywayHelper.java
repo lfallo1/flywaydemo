@@ -31,6 +31,7 @@ public class FlywayHelper {
 		if(clean){
 			flyway.clean();
 		}
+		flyway.setCleanOnValidationError(true);
 		flyway.setTarget(version);
 		flyway.migrate();
 		flyway.setTarget(flyway.info().all()[flyway.info().all().length-1].getVersion().getVersion());
