@@ -24,8 +24,9 @@ public class FlywayHelper {
 		flyway = new Flyway();
 		flyway.setDataSource(url, username, password);
 		flyway.setLocations(locations);			
+		flyway.setCallbacks(new FlywayCallbacks());
 	}
-	
+
 	public void migrateToVersion(String version, Boolean clean){
 		if(clean){
 			flyway.clean();
