@@ -4,8 +4,6 @@ import org.flywaydb.core.Flyway;
 
 import com.lance.flywaydemo.models.Contact;
 
-
-
 public class Driver {
 
 	public static void main(String[] args) {
