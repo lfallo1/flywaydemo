@@ -36,6 +36,19 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<user></user>
+					<password></password>
+					<url></url>
+					<locations>
+						<location>classpath:migrations/</location>
+					</locations>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
