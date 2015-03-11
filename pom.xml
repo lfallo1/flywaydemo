@@ -41,14 +41,14 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<user></user>
-					<password></password>
-					<url></url>
+					<user>lfallon</user>
+					<password>Raven$1996</password>
+					<url>jdbc:mysql://</url>
 					<locations>
 						<location>classpath:migrations/</location>
 					</locations>
 				</configuration>
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>
 </project>
